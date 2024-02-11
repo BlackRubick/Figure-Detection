@@ -4,7 +4,7 @@ import cv2
 
 color = (0, 0, 0)
 # Cargamos la figura
-image = cv2.imread('Cesar.png')
+image = cv2.imread('Captura de pantalla 2024-02-10 a la(s) 19.25.00.png')
 # Cambiamos la escala de color a imagen en escala de grises
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 # Dibujo de los bordes detectando los cambios en los bordes
@@ -39,10 +39,12 @@ for c in cnts:
         else:
             cv2.putText(image, 'Rectangulo', (x, y - 5), 1, 1, color, 1)
     if len(approx) == 5:
+        #Aqui agregue para que pudiera reconocer la estrellas de 5 landos
         cv2.putText(image, 'Pentagono', (x, y - 5), 1, 1, color, 1)
     if len(approx) == 6:
         cv2.putText(image, 'Hexagono', (x, y - 5), 1, 1, color, 1)
     if len(approx) == 10:
+        #Aqui agregue para que pudiera reconocer la estrella de mi imagen que tiene 10  lados
         cv2.putText(image, 'Decagono', (x, y - 5), 1, 1, color, 1)
     # Para detección de círculos se realiza mediante la definición de un circulo
     # como un polígono de muchos lados
